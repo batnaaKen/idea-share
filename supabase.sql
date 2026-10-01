@@ -8,10 +8,6 @@ create table if not exists posts (
   file_url text,
   external_url text,
   created_at timestamptz not null default now(),
-  constraint post_source_check check (
-    (file_url is not null and external_url is null)
-    or (file_url is null and external_url is not null)
-  )
 );
 
 create table if not exists comments (
@@ -37,3 +33,15 @@ create policy "documents public read" on storage.objects
 for select using (bucket_id = 'documents');
 create policy "documents public upload" on storage.objects
 for insert with check (bucket_id = 'documents');
+
+
+-- 編集・削除を使うためのポリシー
+drop policy if exists "posts public update" on posts;
+create policy "posts public update" on posts
+for update using (true) with check (true);
+
+drop policy if exists "posts public delete" on posts;
+create policy "posts public delete" on posts
+for delete using (true);
+
+alter table posts drop constraint if exists post_source_check;

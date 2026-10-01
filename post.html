@@ -2,15 +2,15 @@
 <html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>アイデアを投稿</title><link rel="stylesheet" href="style.css"></head>
 <body><header><a href="index.html">Idea Database</a><nav><a href="ideas.html">一覧</a><a href="post.html">投稿</a></nav></header>
-<main class="container"><h1>アイデアを投稿</h1>
+<main class="container"><h1 id="pageTitle">アイデアを投稿</h1>
 <p><a class="button secondary" href="template.docx">投稿用Wordファイルをダウンロード</a></p>
 <form id="postForm" class="card">
 <label>投稿者名（ニックネーム可）<input id="author" required maxlength="50"></label>
 <label>タイトル<input id="title" required maxlength="100"></label>
 <label>概要<textarea id="description" required maxlength="1000"></textarea></label>
-<label>タグ（カンマ区切り）<input id="tags" placeholder="教育, ICT, 国際交流"></label>
+<label>タグ（カンマ区切り）<input id="tags" placeholder="指導案, ウォームアップ, アイデア"></label>
 <label>投稿方法<select id="type"><option value="file">Wordファイル</option><option value="url">URL</option></select></label>
 <div id="fileArea"><input id="file" type="file" accept=".doc,.docx"></div>
 <div id="urlArea" hidden><input id="url" type="url" placeholder="https://..."></div>
-<button class="button primary" type="submit">投稿する</button><p id="message"></p>
+<button class="button primary" type="submit" id="submitButton">投稿する</button><p id="message"></p>
 </form></main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="post.js"></script></body></html>
