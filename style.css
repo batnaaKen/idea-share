@@ -6,3 +6,6 @@
 .filter-tag:hover{opacity:.75}
 
 .idea .summary{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;white-space:normal}.controls{display:flex;gap:12px;align-items:center;margin:12px 0}.controls input{padding:8px;max-width:320px}.filter-tag{cursor:pointer;pointer-events:auto}
+
+.title-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.keyword-search{flex:1;min-width:180px;max-width:360px;padding:9px 10px}
